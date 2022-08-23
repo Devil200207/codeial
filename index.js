@@ -1,7 +1,15 @@
+// using express
 const express = require('express');
 const app = express();
 
+// using port
 const port = 8000;
+
+// using express-ejs-layouts library
+const expressLayouts = require('express-ejs-layouts');
+
+// telling app that site which are called are layouts types
+app.use(expressLayouts);
 
 // use express router
 app.use('/',require('./routes'));
@@ -14,7 +22,7 @@ app.set('views','./views');
 
 
 app.listen(port,function(err)
-{
+{  
     if(err)
     {
         console.log(`Error in running the server: ${err}`);
