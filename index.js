@@ -5,6 +5,9 @@ const app = express();
 // using port
 const port = 8000;
 
+// setting up data base
+const db = require('./config/mongoose');
+
 // setting up static file
 app.use(express.static('./assets'));
 
