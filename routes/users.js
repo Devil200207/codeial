@@ -10,4 +10,6 @@ router.get('/signup',userscontroller.signup);
 router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
 
+router.post('/create',userscontroller.create);
+
 module.exports = router; 
