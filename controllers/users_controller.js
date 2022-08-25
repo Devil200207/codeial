@@ -35,7 +35,7 @@ const User = require('../models/user');
     {
       if(err)
       {
-        console.log('error in finding user in signingup');
+        console.log('error in finding user in signing up');
         return;
       }
 
@@ -45,7 +45,7 @@ const User = require('../models/user');
         {
           if(err)
           {
-            console.log('error in finding user in signingup');
+            console.log('error in finding user in signing up');
             return;
           }
 
@@ -62,5 +62,30 @@ const User = require('../models/user');
 
   module.exports.createSession = function(req,res)
   {
-    // todo later
+    // step to authentication
+    //find the user
+    User.findOne({email: req.body.email} ,function(err,user)
+    {
+      if(err)
+      {
+        console.log('error in finding user in signing in');
+        return;
+      }
+
+      if(user)  // if user found
+      {
+        if(user.password != req.body.password) // if user found handle & password not match
+        {
+          return res.redirect('back');
+        }       
+        
+        // session created
+        res.cookie('user_id',user.id);
+        return res.redirect('/users/profile');
+      }
+      else  // handle if user not found
+      {
+        return res.redirect('back');
+      }
+    })    
   }

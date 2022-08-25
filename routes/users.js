@@ -11,5 +11,6 @@ router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
 
 router.post('/create',userscontroller.create);
+router.post('/create-session',userscontroller.createSession)
 
 module.exports = router; 
