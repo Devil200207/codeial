@@ -19,3 +19,15 @@
       title:"Codeial | Sign Up"
     });
   }
+
+  // get the sign up data
+
+  module.exports.create = function(req,res)
+  {
+    // todo later
+  }
+
+  module.exports.createSession = function(req,res)
+  {
+    // todo later
+  }
