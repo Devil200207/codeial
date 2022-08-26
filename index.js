@@ -12,6 +12,12 @@ const port = 8000;
 // setting up data base
 const db = require('./config/mongoose');
 
+// using express session for session cookie
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+
+
 // setting up static file
 app.use(express.static('./assets'));
 
@@ -31,15 +37,28 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-// use express router
-app.use('/',require('./routes'));
-
 // set ejs as view engine
 app.set('view engine','ejs');
 
 // set views folder for view
 app.set('views','./views');
 
+app.use(session({
+    name:'codeial',
+    // todo change the secret before deployment in production moad
+    secret:'chinmay',
+    saveUninitialized: false,
+    resave:false,
+    cookie:{
+        maxAge:(1000*60*100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// use express router
+app.use('/',require('./routes'));
 
 app.listen(port,function(err)
 {  

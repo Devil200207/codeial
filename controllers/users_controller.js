@@ -59,8 +59,9 @@ const User = require('../models/user');
     });
      
   }
-
+  
+  // sign in and create a session for the user
   module.exports.createSession = function(req,res)
   {
-    // todo later
+    return res.redirect('/');
   }
