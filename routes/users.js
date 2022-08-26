@@ -9,6 +9,7 @@ router.get('/signin',userscontroller.signin);
 router.get('/signup',userscontroller.signup);
 router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
+router.get('/sign-out',userscontroller.destroySession);
 
 router.post('/create',userscontroller.create);
 router.post('/create-session',userscontroller.createSession)

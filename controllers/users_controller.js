@@ -2,9 +2,29 @@ const User = require('../models/user');
   
   module.exports.profile = function(req,res)
   {
-    return res.render('users_profile',{
-      title: "profile"
-    });
+    if(req.cookies.user_id)
+    {
+      User.findById(req.cookies.user_id,function(err,user)
+      {
+        if(err)
+        {
+          console.log('error');
+          return;
+        }
+
+        if(user)
+        {
+          return res.render('users_profile',{
+            title:"User profile",
+            user:user
+          });
+        }
+      });
+    }
+    else
+    {
+      return res.redirect('/users/signin')
+    }
   }
 
   // render the sign-in and sign-up page
@@ -89,3 +109,8 @@ const User = require('../models/user');
       }
     })    
   }
+
+  module.exports.destroySession = function(req,res)
+ {
+   return res.redirect('/users/signin');
+ }
