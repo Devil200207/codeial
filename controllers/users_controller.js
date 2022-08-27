@@ -73,3 +73,15 @@ const User = require('../models/user');
   {
     return res.redirect('/');
   }
+
+  module.exports.destroySession = function(req,res,next)
+  {
+    req.logout(function(err)
+    {
+      if(err)
+      {
+        next(err);
+      }
+    });
+    return res.redirect('/');
+  }
