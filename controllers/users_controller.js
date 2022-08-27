@@ -10,6 +10,10 @@ const User = require('../models/user');
   // render the sign-in and sign-up page
   module.exports.signin = function(req,res)
   {
+    if(req.isAuthenticated())
+    {
+      return res.redirect('/users/profile');
+    }
     return res.render('signin',{
       title:"Codeial | Sign In"
     });
@@ -17,6 +21,10 @@ const User = require('../models/user');
 
   module.exports.signup = function(req,res)
   {
+    if(req.isAuthenticated())
+    {
+      return res.redirect('/users/profile');
+    }
     return res.render('signup',{
       title:"Codeial | Sign Up"
     });
