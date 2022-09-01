@@ -1,16 +1,21 @@
-<h1>Sign In</h1>
+<link rel= "stylesheet" href= "/css/signin.css">
 
-<form action="/users/createSession" method="post">
-        
-    <div>
-        <label for="u-mail">Username or e-mail <span>*</span></label><br>
-        <input id="u-mail" type="email" name="email" placeholder="xyz@gmail.com" required>
-    </div>
+<div id="main">
+    <h1>Sign In</h1>
 
-    <div>
-        <label for="u-password">Password <span>*</span></label><br>
-        <input id="u-password" type="password" name="password" placeholder="password" required>
-    </div>
     
-    <button type="submit">Sign-In</button>
-</form>
+    <form id="log-in" action="/users/createSession" method="post">
+        <i class="fa-solid fa-user" id="inner-i"></i>
+        <div id="i-div1">
+            <i class="fa-solid fa-user"></i>  
+            <input id="u-mail" type="email" name="email" placeholder="xyz@gmail.com" required>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-lock"></i>
+            <input id="u-password" type="password" name="password" placeholder="password" required>
+        </div>
+        
+        <button type="submit">Log-In</button>
+    </form>
+</div>

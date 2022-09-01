@@ -6,6 +6,17 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
+// using sass middleware
+const sassMiddleware = require('node-sass-middleware');
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle:'expanded',
+    prefix: '/css',
+
+}));
+
 // using port
 const port = 8000;
 
@@ -19,7 +30,6 @@ const passportLocal = require('./config/passport-local-strategy');
 
 // using mongodb to store session
 const MongoStore = require('connect-mongo');
-
 
 // setting up static file
 app.use(express.static('./assets'));

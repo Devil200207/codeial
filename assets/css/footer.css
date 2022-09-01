@@ -1,0 +1,163 @@
+footer {
+  background-color: #eb65eb;
+  height: 50px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  /* button in contact */
+}
+
+footer h4 {
+  color: whitesmoke;
+}
+
+footer h4 a {
+  color: whitesmoke;
+}
+
+footer .social-icons li a i {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: white;
+}
+
+footer .social-link li a i {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+footer .social-link li a i:hover {
+  box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
+
+footer section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .section-heading {
+  width: auto;
+  padding: 20px 10px 10px;
+  font-weight: 400;
+}
+
+footer .section-heading span {
+  font-size: 40px;
+  color: #2857a4;
+  display: inline-block;
+  padding-top: 10px;
+  margin-right: 0.5rem;
+}
+
+footer #contact {
+  background-color: #0abcf9;
+  background: #eb65eb;
+  color: white;
+  padding-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+footer .horizontal-list {
+  padding-left: 0px;
+  margin: 0px;
+}
+
+footer .horizontal-list li {
+  display: inline-block;
+  margin: 0px 8px 8px 0px;
+}
+
+footer .nav-menu li a {
+  transition: color 0.5s, border-bottom 4s;
+}
+
+footer .nav-menu li a:hover {
+  color: lightgrey;
+  border-bottom: 1px solid black;
+}
+
+footer #contact h1 span {
+  color: white;
+}
+
+footer #contact-form-container {
+  width: 50%;
+}
+
+footer #contact-detail {
+  display: flex;
+}
+
+footer #c-form {
+  margin-left: 20%;
+}
+
+footer #c-form input {
+  color: whitesmoke;
+}
+
+footer #my-info {
+  width: 35%;
+  margin-left: 6%;
+}
+
+footer #my-info p {
+  font-size: 0.9rem;
+  color: #d9dcdd;
+}
+
+footer .my-details-info-container {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #d9dcdd;
+}
+
+footer .my-details-info-container span {
+  margin-left: 0.4rem;
+}
+
+footer .my-details-info-container i {
+  color: white;
+}
+
+footer #c-form input, footer textarea {
+  max-width: 90%;
+  margin: 15px;
+  padding: 4px 10px;
+  border: 0px solid transparen-0t;
+  border-bottom: 2px solid white;
+  color: #d9dcdd;
+  background: transparent;
+  width: 90%;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+footer #c-form button[type="submit"] {
+  background: transparent;
+  font-size: 0.95rem;
+  border: 2px solid white;
+  margin-top: 5%;
+  margin-left: 35%;
+  border-radius: 2px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.046875em;
+  line-height: 1;
+  padding: 0.8em 0.8em 0.78em;
+  text-transform: uppercase;
+}
+
+footer .social-link li a i {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+footer .social-link li a i:hover {
+  box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
