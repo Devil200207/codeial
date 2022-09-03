@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 const userscontroller = require('../controllers/users_controller');
+const postcontroller = require('../controllers/post_controller');
 const helpcontoller = require('../controllers/help_controllers');
 
 router.get('/profile',passport.checkAuthentication,userscontroller.profile);
@@ -10,6 +11,8 @@ router.get('/signin',userscontroller.signin);
 router.get('/signup',userscontroller.signup);
 router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
+router.get('/post',postcontroller.post);
+
 
 router.post('/create',userscontroller.create);
 

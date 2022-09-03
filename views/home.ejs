@@ -1,1 +1,25 @@
 <h1>Codeal / <%=title%> </h1>
+
+<section>
+    <h4>Posts</h4>
+    <form action="/posts/create" method="post">
+        <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
+        <input type="submit" value="Post">
+    </form>
+
+    <div>
+        <ul>
+            <% for(post of posts){%>
+                <li>
+                   <p>
+                        <%= post.content %>
+                        <br>
+                        <small>
+                            <%= post.user.name %>
+                        </small>
+                   </p>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</section>
