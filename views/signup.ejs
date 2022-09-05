@@ -6,23 +6,23 @@
     <form action="/users/create" method="post" id="sign-up">
         <i class="fa-solid fa-user" id="inner-i"></i>
         <div>
-            <label for="u-name">Full Name <span>*</span> </label><br>
-            <input id="u-name" type="text" name="name" placeholder="Name" required>
+            <i class="fa-solid fa-user"></i>
+            <input id="u-name" type="text" name="name" placeholder="Name *" required>
         </div>
         
         <div>
-            <label for="u-mail">e-mail <span>*</span></label><br>
-            <input id="u-mail" type="email" name="email" placeholder="e-mail" required>
+            <i class="fa-solid fa-envelope"></i>
+            <input id="u-mail" type="email" name="email" placeholder="e-mail *" required>
         </div>
 
         <div>
-            <label for="u-password">Password <span>*</span></label><br>
-            <input id="u-password" type="password" name="password" placeholder="password" required>
+            <i class="fa-sharp fa-solid fa-lock"></i>
+            <input id="u-password" type="password" name="password" placeholder="password *" required>
         </div>
 
         <div>
-            <label for="uc-password">Confirm Password <span>*</span></label><br>
-            <input id="uc-password" type="password" name="confirm_password" placeholder="confirm password" required>
+            <i class="fa-sharp fa-solid fa-lock"></i>
+            <input id="uc-password" type="password" name="confirm_password" placeholder="confirm password *" required>
         </div>
 
         <button type="submit">Sign-up</button>
