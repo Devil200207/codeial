@@ -22,7 +22,7 @@ body #main #sign-up {
   height: auto;
   text-align: center;
   width: 350px;
-  background-color: rgba(240, 182, 248, 0.5);
+  background-color: rgba(176, 187, 240, 0.5);
   margin-top: 90px;
   color: white;
 }
@@ -30,7 +30,7 @@ body #main #sign-up {
 body #main #sign-up #inner-i {
   position: relative;
   top: -25px;
-  background-color: rgba(240, 182, 248, 0.5);
+  background-color: rgba(90, 130, 190, 0.5);
   border-radius: 2rem;
   width: 67px;
   height: 67px;
@@ -39,7 +39,7 @@ body #main #sign-up #inner-i {
 
 body #main #sign-up i {
   position: relative;
-  color: purple;
+  color: #3872c9;
   width: 30px;
   height: 40px;
   font-size: 1.6rem;
@@ -48,13 +48,13 @@ body #main #sign-up i {
 body #main #sign-up input {
   height: 40px;
   width: 250px;
-  background-color: #3e023e;
+  background-color: #4b65a8;
   margin-top: 2px;
   color: whitesmoke;
 }
 
 body #main #sign-up button {
-  background-color: #3e023e;
+  background-color: #4b65a8;
   color: whitesmoke;
   margin-top: 10px;
   margin-bottom: 10px;
