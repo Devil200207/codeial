@@ -6,10 +6,12 @@ const userscontroller = require('../controllers/users_controller');
 const postcontroller = require('../controllers/post_controller');
 const helpcontoller = require('../controllers/help_controllers');
 
-router.get('/profile',passport.checkAuthentication,userscontroller.profile);
+router.get('/profile/:id',passport.checkAuthentication,userscontroller.profile);    
+router.post('/update/:id',passport.checkAuthentication,userscontroller.update);        
+
 router.get('/signin',userscontroller.signin);
 router.get('/signup',userscontroller.signup);
-router.get('/profile',userscontroller.profile);
+// router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
 router.get('/post',postcontroller.post);
 

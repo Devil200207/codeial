@@ -1,63 +1,34 @@
-<h1>Codeal / <%=title%> </h1>
+<link rel="stylesheet" href="/css/home.css">
+<!-- <h1>Codeal / <%=title%> </h1> -->
 
-<section>
-    <h4>Posts</h4>
-
-    <% if(locals.user){%>
-        <form action="/posts/create" method="post">
-            <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
-            <input type="submit" value="Post">
-        </form>
-    <%}%>
-
-    <div>
-        <ul>
-            <% for(post of posts){%>
-                <li>
-                   <p>
-                        <% if((locals.user) && (locals.user.id == post.user.id)){%>
-                            <small>
-                                <a href="/posts/destroy/<%= post.id %>">delete it</a>
-                            </small>
-                        <%}%>
-
-                        <%= post.content %>
-                        <br>
-                        <small>
-                            <%= post.user.name %>
-                        </small>
-                   </p>
-
-                   <div class="post-comment">
-
-                        <% if(locals.user){%>
-                        <form action="/comments/create" method="post">
-                            <input type="text" name="content" placeholder="type here to type comment..." required>
-                            <input type="hidden" name="post" value="<%= post.id %>">
-                            <button type="submit">Add comment</button>
-                        </form>
-                        
-                        <%}%>
-
-                        <div class="post-comments-list">
-                            <ul>
-                                <%for(comment of post.comments){%>
-                                  
-                                    <p>
-                                        <%= comment.content%>
-                                        <br>
-                                        <small>
-                                            <%= comment .user.name%>
-                                        </small>
-                                    </p>
-
-                                <%}%>
-                            </ul>
-
-                        </div>
-                   </div>
-                </li>
-            <%}%>
-        </ul>
-    </div>
-</section>
+<div id="main-div">
+    <section id="s-post">
+        <h4>Posts</h4>
+    
+        <% if(locals.user){%>
+            <form action="/posts/create" method="post">
+                <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
+                <input type="submit" value="Post">
+            </form>
+        <%}%>
+    
+        <div id="u-post">
+            <ul>
+                <% for(post of posts){%>
+                    <!-- including detail of post -->
+                    <%- include('_post') -%>
+                <%}%>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="s-friends">
+        <h4>Friends</h4>
+        <% for(u of all_users){%>
+            <p>
+                <i class="fa-solid fa-user"></i>
+                <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+            </p>
+        <%}%>
+    </section>
+</div>

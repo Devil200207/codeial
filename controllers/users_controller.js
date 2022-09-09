@@ -2,9 +2,30 @@ const User = require('../models/user');
   
   module.exports.profile = function(req,res)
   {
-    return res.render('users_profile',{
-      title: "profile"
-    });
+    User.findById(req.params.id,function(err,user)
+    {
+      console.log(user);
+      return res.render('users_profile',{
+        title: "profile",
+        profile_user:user
+      });
+    })
+  }
+
+  module.exports.update = function(req,res)
+  {
+    console.log(req.params.id);
+    if(req.user.id == req.params.id)
+    {
+      User.findByIdAndUpdate(req.params.id,req.body,function(err,user)
+      {
+        return res.redirect('back');
+      });
+    }
+    else
+    {
+      return res.status(401).send('Unauthorized');
+    }
   }
 
   // render the sign-in and sign-up page

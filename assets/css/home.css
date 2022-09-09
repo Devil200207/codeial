@@ -1,0 +1,33 @@
+#main-div {
+  display: flex;
+}
+
+#main-div #s-post {
+  width: 70vw;
+}
+
+#main-div #s-friends {
+  background-color: #3e3c3c;
+  width: 30vw;
+  height: 100vh;
+}
+
+#main-div #s-friends h4 {
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 2px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: cursive;
+  letter-spacing: 2px;
+}
+
+#main-div #s-friends i {
+  color: whitesmoke;
+}
+
+#main-div #s-friends a {
+  text-decoration: none;
+  font-family: monospace;
+  text-transform: capitalize;
+}

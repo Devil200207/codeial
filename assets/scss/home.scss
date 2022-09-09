@@ -1,0 +1,36 @@
+#main-div
+{
+    display: flex;
+
+    #s-post
+    {
+        width: 70vw;
+    }
+    #s-friends
+    {
+        h4
+        {
+            color: whitesmoke;
+            text-align: center;
+            margin-top: 2px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-family: cursive;
+            letter-spacing: 2px;
+            
+         }
+        background-color: rgb(62, 60, 60);
+        width: 30vw;
+        height: 100vh;
+        i
+        {
+            color: whitesmoke;
+        }
+        a
+        {
+            text-decoration: none;
+            font-family: monospace;
+            text-transform: capitalize;
+        }
+    }
+}
