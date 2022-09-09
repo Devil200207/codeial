@@ -1,13 +1,27 @@
 // setting express
 const express = require('express');
-
 // setting cookie parser
 const cookieParser = require('cookie-parser');
-
+// using app
 const app = express();
-
+// using port
+const port = 8000;
+// setting up data base
+const db = require('./config/mongoose');
+// using express session for session cookie
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+// using mongodb to store session
+const MongoStore = require('connect-mongo');
 // using sass middleware
 const sassMiddleware = require('node-sass-middleware');
+// using connect flash to show flash messages
+const flash = require('connect-flash');
+// calling the middle ware we made to show flash messages
+const custoMware = require('./config/middleware');
+
+
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -16,20 +30,6 @@ app.use(sassMiddleware({
     prefix: '/css',
 
 }));
-
-// using port
-const port = 8000;
-
-// setting up data base
-const db = require('./config/mongoose');
-
-// using express session for session cookie
-const session = require('express-session');
-const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy');
-
-// using mongodb to store session
-const MongoStore = require('connect-mongo');
 
 // setting up static file
 app.use(express.static('./assets'));
@@ -52,7 +52,6 @@ app.set('layout extractScripts',true);
 
 // set ejs as view engine
 app.set('view engine','ejs');
-
 // set views folder for view
 app.set('views','./views');
 
@@ -79,13 +78,17 @@ app.use(session({
 }));
 
 app.use(passport.initialize());
+// using session middleware
 app.use(passport.session());
-
+// using passposrt middleware to authenticate
 app.use(passport.setAuthenticatedUser);
-
+// using flash middleware its called after session cooki because it uses session cookies
+app.use(flash());
+app.use(custoMware.setFlash);
 // use express router
 app.use('/',require('./routes'));
 
+// to check that server is running
 app.listen(port,function(err)
 {  
     if(err)

@@ -1,5 +1,4 @@
-const User = require('../models/user');  
-  
+const User = require('../models/user');    
   module.exports.profile = function(req,res)
   {
     User.findById(req.params.id,function(err,user)
@@ -92,6 +91,7 @@ const User = require('../models/user');
   // sign in and create a session for the user
   module.exports.createSession = function(req,res)
   {
+    req.flash('success','Logged In successfully');
     return res.redirect('/');
   }
 
@@ -104,5 +104,7 @@ const User = require('../models/user');
         next(err);
       }
     });
+
+    req.flash('success','Logged Out successfully');
     return res.redirect('/');
   }
