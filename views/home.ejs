@@ -1,34 +1,37 @@
 <link rel="stylesheet" href="/css/home.css">
 <!-- <h1>Codeal / <%=title%> </h1> -->
 
-<div id="main-div">
-    <section id="s-post">
-        <h4>Posts</h4>
-    
-        <% if(locals.user){%>
-            <form action="/posts/create" method="post">
-                <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
-                <input type="submit" value="Post">
-            </form>
-        <%}%>
-    
-        <div id="u-post">
-            <ul>
-                <% for(post of posts){%>
-                    <!-- including detail of post -->
-                    <%- include('_post') -%>
-                <%}%>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="s-friends">
-        <h4>Friends</h4>
-        <% for(u of all_users){%>
-            <p>
-                <i class="fa-solid fa-user"></i>
-                <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
-            </p>
-        <%}%>
-    </section>
-</div>
+    <div id="main-div">
+        <section id="s-post">
+            <h4>Posts</h4>
+        
+            <% if(locals.user){%>
+                <form action="/posts/create" id ="new-post" method="post">
+                    <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
+                    <input type="submit" value="Post">
+                </form>
+            <%}%>
+        
+            <div id="u-post">
+                <ul>
+                    <% for(post of posts){%>
+                        <!-- including detail of post -->
+                        <%- include('_post') -%>
+                    <%}%>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="s-friends">
+            <h4>Friends</h4>
+            <% for(u of all_users){%>
+                <p>
+                    <i class="fa-solid fa-user"></i>
+                    <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+                </p>
+            <%}%>
+        </section>
+    </div>  
+    <script>
+    console.log('hello123'); 
+    </script>

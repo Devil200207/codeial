@@ -32,7 +32,7 @@ app.use(sassMiddleware({
 }));
 
 // setting up static file
-app.use(express.static('./assets'));
+app.use(express.static('./assets/'));
 
 // usingcookie parser
 app.use(cookieParser());

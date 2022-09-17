@@ -1,4 +1,5 @@
 const User = require('../models/user');    
+
   module.exports.profile = function(req,res)
   {
     User.findById(req.params.id,function(err,user)
@@ -103,8 +104,9 @@ const User = require('../models/user');
       {
         next(err);
       }
+      req.flash('success','Logged Out successfully');
+      return res.redirect('/');
     });
-
-    req.flash('success','Logged Out successfully');
-    return res.redirect('/');
+    
+    
   }

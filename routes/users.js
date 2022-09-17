@@ -11,7 +11,6 @@ router.post('/update/:id',passport.checkAuthentication,userscontroller.update);
 
 router.get('/signin',userscontroller.signin);
 router.get('/signup',userscontroller.signup);
-// router.get('/profile',userscontroller.profile);
 router.get('/help',helpcontoller.help);
 router.get('/post',postcontroller.post);
 
