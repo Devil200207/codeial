@@ -1,3 +1,4 @@
+const { use } = require('passport');
 const User = require('../models/user');    
 
   module.exports.profile = function(req,res)
@@ -12,18 +13,41 @@ const User = require('../models/user');
     })
   }
 
-  module.exports.update = function(req,res)
+  module.exports.update = async function(req,res)
   {
-    console.log(req.params.id);
     if(req.user.id == req.params.id)
     {
-      User.findByIdAndUpdate(req.params.id,req.body,function(err,user)
+      try 
       {
-        return res.redirect('back');
-      });
+        let user = await User.findById(req.params.id);
+        User.uploadedAvatar(req,res,function(err)
+        {
+          if(err)
+          {
+            console.log('*********Multer error',err);
+            return;
+          }
+          user.name = req.body.name;
+          user.email = req.body.email;
+
+          if(req.file)
+          {
+            // this is saving the path of the uploaded file into the avater field in the user
+            user.avatar = User.avatarPath + '/' + req.file.filename;
+          }
+          user.save();
+          return res.redirect('back');
+        });
+      }
+      catch (err) 
+      {
+        req.flash('error',err);
+        return res.redirect('back');        
+      }      
     }
     else
     {
+      req.flash('error','Unauthorized');
       return res.status(401).send('Unauthorized');
     }
   }
