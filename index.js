@@ -40,6 +40,9 @@ app.use(cookieParser());
 // encoding url
 app.use(express.urlencoded());
 
+// using upload to get avatars and pics and alos making it avilable for browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 // using express-ejs-layouts library
 const expressLayouts = require('express-ejs-layouts');
 

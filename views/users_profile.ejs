@@ -1,7 +1,6 @@
 <link rel= "stylesheet" href= "/css/users_profile.css">
 
-<h1><%= user.name%> <%=title%> page </h1>
-
+<img src="<%= user.avatar %>" alt="<%= user.name%>" width="100">
 
 <% if(locals.user.id == profile_user.id){ %>  <!-- if user matches show the form -->
    
