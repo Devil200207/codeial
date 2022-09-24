@@ -1,0 +1,35 @@
+const passport = require('passport');
+const JWTStratgety = require('passport-jwt').Strategy;
+const extractJWT = require('passport-jwt').ExtractJwt;
+const User = require('../models/user');
+
+let opts = {
+    jwtFromRequest: extractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: 'codeial'
+}
+
+passport.use(new JWTStratgety(opts, function(jwtPayload, done) 
+{
+    console.log('befor jwt');
+    User.findById(jwtPayload._id, function(err, user)
+    {
+        if (err)
+        {
+            console.log('Error in user from JWT');
+            return;
+        }
+        if (user)
+        {
+            console.log('in jwt');
+            return done(null, user);
+        } 
+        else
+        {
+            return done(null, false);
+        }
+    });
+
+}));
+
+module.exports = passport;
+
