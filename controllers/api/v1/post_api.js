@@ -21,10 +21,6 @@ module.exports.destroy = async function(req,res)
   try 
   {
     let post = await Post.findById(req.params.id);
-    console.log("This is arams",req.params.id)
-    console.log("This is post ",post);
-    console.log("This is id", post.user.id)
-    console.log("req.user" , req.user)
     // .id means converting object id into string 
     if(post.user.id == req.user.id)
     {
