@@ -10,9 +10,11 @@ const port = 8000;
 const db = require('./config/mongoose');
 // using express session for session cookie
 const session = require('express-session');
+// using all strategy
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
+const passportgoogle = require('./config/passport-google-oauth2-strategy');
 // using mongodb to store session
 const MongoStore = require('connect-mongo');
 // using sass middleware

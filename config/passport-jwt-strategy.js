@@ -8,24 +8,16 @@ let opts = {
     secretOrKey: 'codeial'
 }
 
-passport.use(new JWTStratgety(opts, function(jwtPayload, done) 
-{
-    console.log('befor jwt');
-    User.findById(jwtPayload._id, function(err, user)
-    {
-        if (err)
-        {
-            console.log('Error in user from JWT');
-            return;
+passport.use(new JWTStratgety(opts, function(jwt_payload, done) {
+    User.findOne({id: jwt_payload.sub}, function(err, user) {
+        if (err) {
+            return done(err, false);
         }
-        if (user)
-        {
-            console.log('in jwt');
+        if (user) {
             return done(null, user);
-        } 
-        else
-        {
+        } else {
             return done(null, false);
+            // or you could create a new account
         }
     });
 
