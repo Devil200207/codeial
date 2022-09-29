@@ -2,13 +2,14 @@ const nodeMailer = require('../config/nodemailer');
 
 // this is another wya of exporting a function
 exports.newComment =  (comment) => {
-    console.log('inside new comment mailer', comment.user.email);
+    
+    let htmlString = nodeMailer.renderTemplate({comment:comment},'/comments/new_comment.ejs')
 
     nodeMailer.transpoter.sendMail({
-        from:'chinmachat@gmail.com',
+        from:'codieal.developer@gmail.com',
         to:comment.user.email,
         subject:"New comment publish",
-        html:'<h1>yups, your comment is now publish</h1>'
+        html:htmlString
     },(err,info) =>
     {
         if(err)
@@ -16,7 +17,6 @@ exports.newComment =  (comment) => {
             console.log('error in sending mail',err);
             return;
         }
-        console.log('message send',info);
         return;
     });
 }
