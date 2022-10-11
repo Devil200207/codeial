@@ -5,6 +5,7 @@ const { populate } = require('../models/comment');
 const commentEmailWorker = require('../workers/comment_email_worker');
 const queue = require('../config/kue');
 const { Job } = require('kue');
+const Like = require('../models/like');
  
  module.exports.create = async function(req,res)
  {
@@ -60,16 +61,23 @@ const { Job } = require('kue');
             comment.remove();
 
            let post =  await Post.findByIdAndUpdate(postId,{$pull:{comments:req.params.id}});
+
+             //    for deleting likes
+            await Like.deleteMany({likeabe:comment._id,onModel:'Comment'});
+
+            req.flash('success','Comment deleted!');
             return res.redirect('back');
         }
         else
         {
+            req.flash('error','Comment not found!!!');
             return res.redirect('back');
         }   
     } 
     catch (error) 
     {
         console.log('Error',error);  
+        req.flash('error','Internal server error');
         return;      
     }
  }

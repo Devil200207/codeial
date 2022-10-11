@@ -31,8 +31,7 @@ app.use(sassMiddleware({
     debug: true,
     outputStyle:'expanded',
     prefix: '/css',
-
-}));
+}));    
 
 // setting up static file
 app.use(express.static('./assets/'));

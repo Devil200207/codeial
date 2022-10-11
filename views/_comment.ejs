@@ -3,16 +3,28 @@
         <%for(comment of post.comments){%>
           
            <li>
-               <p>
-                   <% if((locals.user) && (locals.user.id == comment.user.id)){%>
-                       <small>
-                           <a href="/comments/destroy/<%= comment.id %>">delete it</a>
-                       </small>
-                   <%}%>
-                   <%= comment.content%>
-                   <br>
+                <p>
+                    <% if((locals.user) && (locals.user.id == comment.user)){%>
+                        <small>
+                            <a href="/comments/destroy/<%= comment.id %>"><i class="fa-solid fa-trash"></i></a>
+                        </small>
+                    <%}%>
+                    <%= comment.content%>
+                    <br>
+                    <small>
+                        <%= comment.user.name%>
+                    </small>
+
+                   <!-- for likes -->
                    <small>
-                       <%= comment.user.name%>
+                    <% if (locals.user){ %>
+                        <form action="/likes/toggle/?id=<%=comment._id%>&type=Comment" method="post">
+                           <button type="submit"><i id="heart" class="fa-regular fa-heart"></i></button>
+                           <h4><%= comment.likes.length %> Likes</h4>
+                        </form>
+                    <% }else{ %>
+                        <%= comment.likes.length %> Likes
+                    <% } %>
                    </small>
                </p>
            </li>
