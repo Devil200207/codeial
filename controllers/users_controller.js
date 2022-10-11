@@ -7,10 +7,9 @@ const path = require('path');
   {
     User.findById(req.params.id,function(err,user)
     {
-      console.log(user);
       return res.render('users_profile',{
         title: "profile",
-        profile_user:user
+        profile_user:user,
       });
     })
   }
