@@ -2,7 +2,7 @@
     <p>
          <% if((locals.user) && (locals.user.id == post.user.id)){%>
              <small>
-                 <a href="/posts/destroy/<%= post.id %>">delete it</a>
+                 <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
              </small>
          <%}%>
 
@@ -10,6 +10,20 @@
          <br>
          <small>
              <%= post.user.name %>
+         </small>
+
+         <!-- for likes  -->
+         <br>
+
+         <small>
+            <% if(locals.user){ %>
+                <form action="/likes/toggle/?id=<%=post._id%>&type=Post" method="post">
+                    <button type="submit"><i id="heart" class="fa-regular fa-heart"></i></button>
+                    <h4><%= post.likes.length %> Likes</h4>
+                </form>
+            <%}else{%>
+                <%= post.likes.length%> Likes
+            <%}%>
          </small>
     </p>
 
