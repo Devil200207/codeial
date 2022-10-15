@@ -15,14 +15,6 @@
         <button type="submit">Save Changes</button>
     </form>
 
-    <h4>Friends</h4>
-    <% for(u of profile_user.friendships){%>
-        <p>
-            <i class="fa-solid fa-user"></i>
-            <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
-        </p>
-    <%}%>
-
 <%}else{ %>
     <!-- else show only the profile info-->
     <% if(profile_user.avatar){%>
