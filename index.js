@@ -40,18 +40,19 @@ const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listing on port 5000');
 
-
+const path = require('path');
+const env = require('./config/environment');
 
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname,env.asset_path,'scss'),
+    dest: path.join(__dirname,env.asset_path,'css'),
     debug: true,
     outputStyle:'expanded',
     prefix: '/css',
 }));    
 
 // setting up static file
-app.use(express.static('./assets/'));
+app.use(express.static(env.asset_path));
 
 // usingcookie parser
 app.use(cookieParser());
@@ -81,7 +82,7 @@ app.set('views','./views');
 app.use(session({
     name:'codeial',
     // todo change the secret before deployment in production moad
-    secret:'chinmay',
+    secret:env.session_cookie_key,
     saveUninitialized: false,
     resave:false,
     cookie:{
