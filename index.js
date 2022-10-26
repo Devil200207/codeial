@@ -1,28 +1,45 @@
 // setting express
 const express = require('express');
+
 // setting cookie parser
 const cookieParser = require('cookie-parser');
+
 // using app
 const app = express();
+
 // using port
 const port = 8000;
+
 // setting up data base
 const db = require('./config/mongoose');
+
 // using express session for session cookie
 const session = require('express-session');
+
 // using all strategy
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 const passportgoogle = require('./config/passport-google-oauth2-strategy');
+
 // using mongodb to store session
 const MongoStore = require('connect-mongo');
+
 // using sass middleware
 const sassMiddleware = require('node-sass-middleware');
+
 // using connect flash to show flash messages
 const flash = require('connect-flash');
+
 // calling the middle ware we made to show flash messages
 const custoMware = require('./config/middleware');
+
+// setting up chatting server and socket.io for chatting
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listing on port 5000');
+
 
 
 app.use(sassMiddleware({
