@@ -1,3 +1,12 @@
 body {
-  background-color: aqua;
+  width: 98.9vw;
+  background-color: #f7dadf;
+}
+
+body div {
+  margin-left: 10px;
+}
+
+body div img {
+  margin-top: 10px;
 }

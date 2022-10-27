@@ -1,13 +1,13 @@
 header {
   display: flex;
-  width: 100vw;
-  margin-top: 10px;
+  width: 98.9vw;
+  margin-top: 0px;
   background-color: #eb65eb;
 }
 
 header h3 {
   margin-left: 25px;
-  margin-top: 3px;
+  margin-top: 10px;
   text-align: start;
   color: whitesmoke;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -15,16 +15,17 @@ header h3 {
 
 header #ul-1 {
   position: relative;
-  left: 62%;
+  left: 70%;
   margin-left: 50px;
   list-style-type: none;
   display: flex;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 0%;
 }
 
 header #ul-1 li button {
   margin-left: 10px;
+  font-weight: bold;
   background-color: rgba(240, 182, 248, 0.5);
   border: 1px solid purple;
 }

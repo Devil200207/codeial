@@ -23,11 +23,12 @@ class ToggleLike{
                 console.log(likesCount);
                 if (data.data.deleted == true){
                     likesCount -= 1;
-                    def.style.backgroundColor = 'white';
+                    def.style.color = 'white';
                     
-                }else{
+                }
+                else{
                     likesCount += 1;
-                    def.style.backgroundColor = 'red';
+                    def.style.color = 'red';
                 }
 
 

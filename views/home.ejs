@@ -3,12 +3,12 @@
 
     <div id="main-div">
         <section id="s-post">
-            <h4>Posts</h4>
+            <h1>Posts</h1>
         
             <% if(locals.user){%>
                 <form action="/posts/create" id ="new-post" method="post">
-                    <textarea name="content" cols="30" rows="3" placeholder="type here"></textarea>
-                    <input type="submit" value="Post">
+                    <textarea name="content" cols="30" rows="3" placeholder="type here to post something"></textarea>
+                    <button id="post-submit-btn" type="submit"><i class="fa-solid fa-arrow-up"></i></button>
                 </form>
             <%}%>
         

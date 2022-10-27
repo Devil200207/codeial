@@ -1,21 +1,23 @@
 <li>
     <p>
-         <% if((locals.user) && (locals.user.id == post.user.id)){%>
-             <small>
-                 <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
-             </small>
-         <%}%>
-
-         <%= post.content %>
+        <i class="fa-solid fa-user-secret"></i>
+        <%= post.content %>
+        <% if((locals.user) && (locals.user.id == post.user.id)){%>
+            <small>
+                <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
+            </small>
+        <%}%>
          <br>
-         <small>
+         <small class="uname-post">
+            <i class="fa-solid fa-user-minus"></i>
              <%= post.user.name %>
          </small>
 
          <!-- for likes  -->
          <br>
+         <br>
 
-         <small>
+         <small id="user-post-liker">
             <% if(locals.user){ %>
                 <form action="/likes/toggle/?id=<%=post._id%>&type=Post" method="post">
                     <button type="submit"><i id="heart" class="fa-regular fa-heart"></i></button>
@@ -33,7 +35,7 @@
          <form action="/comments/create" method="post">
              <input type="text" name="content" placeholder="type here to type comment..." required>
              <input type="hidden" name="post" value="<%= post.id %>">
-             <button type="submit">Add comment</button>
+             <button id="comment-poster" type="submit"><i class="fa-solid fa-comments"></i></button>
          </form>
          
          <%}%>

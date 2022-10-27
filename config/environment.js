@@ -20,7 +20,8 @@ const development = {
 }
 
 const production = {
-    name:'production'
+    name:'production',
+    asset_path:process.env.asset_path,
 }
 
 module.exports = development;

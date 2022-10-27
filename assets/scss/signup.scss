@@ -18,7 +18,7 @@ body{
         #sign-up
         {
             position: relative;
-            left: 36%;
+            left: 38%;
             height: auto;
             text-align: center;
             width: 350px;
@@ -64,6 +64,23 @@ body{
                 width: 150px;
                 font-family: cursive;
             }
+            #google-auth
+            {
+                text-align: center;
+                button
+                {
+                  background-color: rgb(75, 101, 168);
+                  font-weight: bold;
+                  width: 200px;
+                  a
+                  {
+                    text-decoration: none;
+                    color: whitesmoke;
+                  }
+                }
+            }
         }
+
+       
     }
 }

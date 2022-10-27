@@ -18,7 +18,7 @@ body #main h1 {
 
 body #main #sign-up {
   position: relative;
-  left: 36%;
+  left: 38%;
   height: auto;
   text-align: center;
   width: 350px;
@@ -60,4 +60,19 @@ body #main #sign-up button {
   margin-bottom: 10px;
   width: 150px;
   font-family: cursive;
+}
+
+body #main #sign-up #google-auth {
+  text-align: center;
+}
+
+body #main #sign-up #google-auth button {
+  background-color: #4b65a8;
+  font-weight: bold;
+  width: 200px;
+}
+
+body #main #sign-up #google-auth button a {
+  text-decoration: none;
+  color: whitesmoke;
 }

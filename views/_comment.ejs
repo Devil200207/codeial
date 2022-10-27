@@ -4,19 +4,21 @@
           
            <li>
                 <p>
+                    <i class="fa-solid fa-comment symbol"></i>
+            
+                    <%= comment.content%>
                     <% if((locals.user) && (locals.user.id == comment.user)){%>
                         <small>
                             <a href="/comments/destroy/<%= comment.id %>"><i class="fa-solid fa-trash"></i></a>
                         </small>
                     <%}%>
-                    <%= comment.content%>
                     <br>
                     <small>
                         <%= comment.user.name%>
                     </small>
 
                    <!-- for likes -->
-                   <small>
+                   <small id="comment-likes">
                     <% if (locals.user){ %>
                         <form action="/likes/toggle/?id=<%=comment._id%>&type=Comment" method="post">
                            <button type="submit"><i id="heart" class="fa-regular fa-heart"></i></button>

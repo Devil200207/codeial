@@ -19,7 +19,7 @@ body{
         #log-in
         {
             position: relative;
-            left: 36%;
+            left: 38%;
             height: auto;
             text-align: center;
             width: 350px;
@@ -64,6 +64,24 @@ body{
                 margin-bottom: 10px;
                 width: 150px;
                 font-family: cursive;
+            }
+
+            h4
+            {
+                color: black;
+            }
+
+            #google-auth
+            {
+                button
+                {
+                    width: 200px;
+                }
+                a
+                {
+                    text-decoration: none;
+                    color: whitesmoke;
+                }
             }
         }
     }
