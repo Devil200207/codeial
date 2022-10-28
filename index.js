@@ -4,6 +4,9 @@ const express = require('express');
 // setting cookie parser
 const cookieParser = require('cookie-parser');
 
+// calling morgan
+const logger = require('morgan');
+
 // using app
 const app = express();
 
@@ -62,6 +65,9 @@ app.use(express.urlencoded());
 
 // using upload to get avatars and pics and alos making it avilable for browser
 app.use('/uploads',express.static(__dirname + '/uploads'));
+
+// using logger
+app.use(logger(env.morgan.mode,env.morgan.options))
 
 // using express-ejs-layouts library
 const expressLayouts = require('express-ejs-layouts');
