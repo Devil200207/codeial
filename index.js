@@ -10,6 +10,9 @@ const logger = require('morgan');
 // using app
 const app = express();
 
+// calling view-helper
+require('./config/view-helper')(app);
+
 // using port
 const port = 8000;
 

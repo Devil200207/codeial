@@ -22,3 +22,11 @@
 [0mGET /users/signup [32m200[0m 15.077 ms - 6919[0m
 [0mGET /users/js/toggle_likes.js [33m404[0m 7.978 ms - 163[0m
 [0mGET /users/js/chat_engine.js [33m404[0m 35.695 ms - 162[0m
+[0mGET /users/signup [31m500[0m 69.774 ms - 1617[0m
+[0mGET /users/signup [31m500[0m 27.209 ms - 1617[0m
+[0mGET /users/signup [31m500[0m 49.999 ms - 1617[0m
+[0mGET /users/signup [31m500[0m 21.016 ms - 1617[0m
+[0mGET /users/signup [31m500[0m 10.936 ms - 1617[0m
+[0mGET /users/signup [32m200[0m 137.969 ms - 6920[0m
+[0mGET /users/js/toggle_likes.js [33m404[0m 9.491 ms - 163[0m
+[0mGET /users/js/chat_engine.js [33m404[0m 30.260 ms - 162[0m
