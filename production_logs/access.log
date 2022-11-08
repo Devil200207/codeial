@@ -40,3 +40,6 @@
 [0mGET /users/signin [32m200[0m 97.191 ms - 6564[0m
 [0mGET /users/js/chat_engine.js [33m404[0m 19.634 ms - 162[0m
 [0mGET /users/js/toggle_likes.js [33m404[0m 12.153 ms - 163[0m
+[0mGET /users/signin [32m200[0m 185.569 ms - 6564[0m
+[0mGET /users/js/toggle_likes.js [33m404[0m 14.617 ms - 163[0m
+[0mGET /users/js/chat_engine.js [33m404[0m 28.669 ms - 162[0m
