@@ -14,7 +14,7 @@ const app = express();
 require('./config/view-helper')(app);
 
 // using port
-const port = 8000;
+const port = process.env.PORT;
 
 // setting up data base
 const db = require('./config/mongoose');
