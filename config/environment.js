@@ -15,6 +15,7 @@ const development = {
     asset_path:'./assets',
     session_cookie_key: 'chinmay',
     db:'codeial_development',
+    dbURL: 'mongodb+srv://chinmachat:chinmay.cc@cluster0.j4ruon4.mongodb.net/?retryWrites=true&w=majority',
     smtp:{
         service:'gmail',
         host:'smtp.gmail.com',
