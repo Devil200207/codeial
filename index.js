@@ -43,9 +43,9 @@ const env = require('./config/environment');
 // setting up chatting server and socket.io for chatting
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(5000);
+chatServer.listen(process.env.PORT);
 
-console.log('chat server is listing on port 5000');
+console.log('chat server is listing on port');
 
 const path = require('path');
 // const env = require('./config/environment');
