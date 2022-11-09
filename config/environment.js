@@ -28,7 +28,7 @@ const development = {
     },
     google_client_ID:"1046015082162-fru1tgtt4liphiv44333p8sngejsppa7.apps.googleusercontent.com",
     google_client_Secret:"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",
-    google_callback_URL:"/users/auth/google/callback",
+    google_callback_URL:"http://codieal-social.herokuapp.com/users/auth/google/callback",
     jwt_secret_key:'codeial',
     morgan:{
         mode:'dev',
