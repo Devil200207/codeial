@@ -43,3 +43,16 @@
 [0mGET /users/signin [32m200[0m 185.569 ms - 6564[0m
 [0mGET /users/js/toggle_likes.js [33m404[0m 14.617 ms - 163[0m
 [0mGET /users/js/chat_engine.js [33m404[0m 28.669 ms - 162[0m
+[0mGET /users/signin [36m304[0m 41.334 ms - -[0m
+[0mGET /users/js/toggle_likes.js [33m404[0m 15.711 ms - 163[0m
+[0mGET /users/js/chat_engine.js [33m404[0m 27.153 ms - 162[0m
+[0mPOST /users/createSession [36m302[0m 25.009 ms - 70[0m
+[0mGET /users/signin [32m200[0m 16.171 ms - 6854[0m
+[0mGET /users/js/toggle_likes.js [33m404[0m 14.407 ms - 163[0m
+[0mGET /users/js/chat_engine.js [33m404[0m 19.149 ms - 162[0m
+[0mPOST /users/createSession [36m302[0m 17.401 ms - 46[0m
+[0mGET / [32m200[0m 154.869 ms - 14790[0m
+[0mGET / [32m200[0m 53.508 ms - 14502[0m
+[0mPOST /posts/create [36m302[0m 18.250 ms - 46[0m
+[0mGET / [32m200[0m 34.867 ms - 16304[0m
+[0mGET / [32m200[0m 71.825 ms - 16014[0m
