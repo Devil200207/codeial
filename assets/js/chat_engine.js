@@ -8,7 +8,7 @@ class ChatEngine
         console.log('io',io);
             
 
-        this.socket = io.connect('http://desolate-refuge-14407.herokuapp.com:5000', {transports: ['websocket'], rejectUnauthorized: false });
+        this.socket = io.connect('http://desolate-refuge-14407.herokuapp.com/:5000', {transports: ['websocket'], rejectUnauthorized: false });
 
         if(this.userEmail)
         {
