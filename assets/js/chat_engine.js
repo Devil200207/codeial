@@ -8,7 +8,7 @@ class ChatEngine
         console.log('io',io);
             
 
-        this.socket = io.connect('http://localhost:5000', {transports: ['websocket'], rejectUnauthorized: false });
+        this.socket = io.connect('http://172.64.202.28:443:5000', {transports: ['websocket'], rejectUnauthorized: false });
 
         if(this.userEmail)
         {
